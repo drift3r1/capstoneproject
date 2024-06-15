@@ -1,6 +1,9 @@
 
 import matplotlib.pyplot as plt
 import re
+import os
+from skimage import io, img_as_ubyte
+from skimage import exposure
 
 # Read CPU results
 cpu_filenames = []
