@@ -152,13 +152,13 @@ By following this evaluation plan, we comprehensively assessed the effectiveness
 
 clone the repository using
 
-gh repo clone shubham-attri/capstoneproject
+''''gh repo clone shubham-attri/capstoneproject'''
 
 clean the existing output files using 
 
-make clean 
+''''make clean''' 
 
 run the program using cmd 
 
-make
+''''make'''
 
