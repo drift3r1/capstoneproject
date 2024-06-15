@@ -8,7 +8,8 @@ from matplotlib import pyplot as plt
 
 # Directory containing the TIFF images
 data_dir = 'data'
-preprocessed_dir = 'processed_data'
+preprocessed_dir = os.path.join(data_dir, 'preprocessed') 
+
 
 # Function to preprocess images and save them
 def preprocess_images(data_dir, preprocessed_dir):
