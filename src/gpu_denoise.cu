@@ -7,6 +7,8 @@
 #define PATCH_SIZE 3
 #define SIGMA 10.0f
 
+using namespace cv;
+
 __global__ void nlm_kernel(const float* d_image, float* d_result, int width, int height, int patch_size, float sigma) {
     int x = blockIdx.x * blockDim.x + threadIdx.x;
     int y = blockIdx.y * blockDim.y + threadIdx.y;
@@ -34,7 +36,7 @@ __global__ void nlm_kernel(const float* d_image, float* d_result, int width, int
     d_result[y * width + x] = sum_pixel_values / sum_weights;
 }
 
-void nlm_denoise(const cv::Mat& input_image, cv::Mat& output_image, int patch_size, float sigma) {
+void nlm_denoise(const Mat& input_image, Mat& output_image, int patch_size, float sigma) {
     int width = input_image.cols;
     int height = input_image.rows;
 
@@ -65,23 +67,23 @@ void nlm_denoise(const cv::Mat& input_image, cv::Mat& output_image, int patch_si
 
 int main() {
     // Load the preprocessed image (assume the image is preprocessed and normalized)
-    cv::Mat input_image = cv::imread("data/preprocessed/image.tiff", cv::IMREAD_GRAYSCALE);
+    Mat input_image = imread("data/preprocessed/image.tiff", IMREAD_GRAYSCALE);
     input_image.convertTo(input_image, CV_32F, 1.0 / 255.0);
 
     // Create an output image
-    cv::Mat output_image = input_image.clone();
+    Mat output_image = input_image.clone();
 
     // Denoise the image using NLM with CUDA
     nlm_denoise(input_image, output_image, PATCH_SIZE, SIGMA);
 
     // Convert the result to 8-bit and save
     output_image.convertTo(output_image, CV_8U, 255.0);
-    cv::imwrite("data/preprocessed/denoised_image_gpu.tiff", output_image);
+    imwrite("data/preprocessed/denoised_image_gpu.tiff", output_image);
 
     // Display the original and denoised images
-    cv::imshow("Original Image", input_image);
-    cv::imshow("Denoised Image", output_image);
-    cv::waitKey(0);
+    imshow("Original Image", input_image);
+    imshow("Denoised Image", output_image);
+    waitKey(0);
 
     return 0;
 }

@@ -90,31 +90,54 @@ We evaluated the performance of our image denoising algorithm using the followin
 
 We compared the performance of our GPU-accelerated solution with a CPU-only implementation. The comparison includes both the quality of the denoised images (using PSNR and SSIM) and the computational time required for denoising.
 
+## Results
+
+### Performance Metrics
+
+We evaluated the performance of our image denoising algorithm using the following metrics:
+
+1. **Peak Signal-to-Noise Ratio (PSNR)**: PSNR measures the ratio between the maximum possible power of a signal and the power of corrupting noise that affects the fidelity of its representation. Higher PSNR values indicate better denoising performance.
+2. **Structural Similarity Index (SSIM)**: SSIM is a perceptual metric that quantifies image quality degradation caused by processing, such as data compression or denoising. SSIM values range from -1 to 1, with higher values indicating better similarity to the original image.
+
+### Performance Comparison
+
+We compared the performance of our GPU-accelerated solution with a CPU-only implementation. The comparison includes both the quality of the denoised images (using PSNR and SSIM) and the computational time required for denoising.
+
 ### Results
 
 The results of our experiments are as follows:
 
 1. **CPU Implementation**:
-   - PSNR: 32.45
-   - SSIM: 0.89
-   - Time: 45.23 seconds
+   - **PSNR**: The PSNR values for the CPU implementation for each image are shown in the graph below.
+   - **SSIM**: The SSIM values for the CPU implementation for each image are shown in the graph below.
+   - **Time**: The time taken for each image in the CPU implementation is shown in the time comparison graph.
+
+   ![CPU PSNR and SSIM](CPU_graph.png)
 
 2. **GPU Implementation**:
-   - PSNR: 32.50
-   - SSIM: 0.90
-   - Time: 3.12 seconds
+   - **PSNR**: The PSNR values for the GPU implementation for each image are shown in the graph below.
+   - **SSIM**: The SSIM values for the GPU implementation for each image are shown in the graph below.
+   - **Time**: The time taken for each image in the GPU implementation is shown in the time comparison graph.
+
+   ![GPU PSNR and SSIM](GPU_graph.png)
+
+### Time Comparison
+
+The following graph shows the time taken for denoising each image using both the CPU and GPU implementations:
+
+![Time Comparison](timecomparison.png)
 
 ### Visual Comparisons
 
-Below are the visual comparisons of the original, CPU-denoised, and GPU-denoised images:
+Below are visual comparisons of the original, CPU-denoised, and GPU-denoised images:
 
-- **Original Image**:
+#### Original Image
 ![Original Image](data/preprocessed/original_image.tiff)
 
-- **CPU Denoised Image**:
+#### CPU Denoised Image
 ![CPU Denoised Image](data/preprocessed/denoised_image_cpu.tiff)
 
-- **GPU Denoised Image**:
+#### GPU Denoised Image
 ![GPU Denoised Image](data/preprocessed/denoised_image_gpu.tiff)
 
 ### Discussion
@@ -124,3 +147,18 @@ Below are the visual comparisons of the original, CPU-denoised, and GPU-denoised
 - **Challenges and Solutions**: One challenge we faced was optimizing the CUDA kernel to efficiently utilize GPU resources. We addressed this by experimenting with different block and grid sizes and by using shared memory to reduce global memory access latency.
 
 By following this evaluation plan, we comprehensively assessed the effectiveness and performance of our GPU-accelerated image denoising algorithm compared to a CPU-only implementation.
+
+### Setting Up
+
+clone the repository using
+
+gh repo clone shubham-attri/capstoneproject
+
+clean the existing output files using 
+
+make clean 
+
+run the program using cmd 
+
+make
+
