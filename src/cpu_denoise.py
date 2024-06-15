@@ -21,6 +21,10 @@ def nlm_cpu(image, patch_size=3, h=10.0):
 
 # Directory containing the preprocessed images
 preprocessed_dir = 'data/preprocessed'
+denoised_dir = 'data/preprocessed/cpu'
+
+# Ensure the denoised directory exists
+os.makedirs(denoised_dir, exist_ok=True)
 
 # List all preprocessed images
 preprocessed_images = [f for f in os.listdir(preprocessed_dir) if f.endswith('.png') or f.endswith('.tiff')]
@@ -37,7 +41,7 @@ for filename in preprocessed_images:
     cpu_time = time.time() - start_time
     
     # Save the denoised image
-    output_image_path = os.path.join(preprocessed_dir, f'denoised_{filename}')
+    output_image_path = os.path.join(denoised_dir, f'denoised_{filename}')
     io.imsave(output_image_path, img_as_ubyte(denoised_image_cpu))
     
     # Calculate and print PSNR and SSIM for evaluation

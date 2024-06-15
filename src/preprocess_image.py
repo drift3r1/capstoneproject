@@ -35,10 +35,10 @@ def preprocess_images(data_dir, preprocessed_dir):
             
             # Save the preprocessed image
             
-            processed_image_path = os.path.join(preprocessed_dir,os.path.splitext(filename)[0] + '.png')
+            #processed_image_path = os.path.join(preprocessed_dir,os.path.splitext(filename)[0] + '.png')
             preprocessed_image_path2 = os.path.join(preprocessed_dir,filename)
-            io.imsave(processed_image_path, img_as_ubyte(normalized_image))
-            #io.imsave(preprocessed_image_path2,img_as_ubyte(normalized_image))
+            #io.imsave(processed_image_path, img_as_ubyte(normalized_image))
+            io.imsave(preprocessed_image_path2,img_as_ubyte(normalized_image))
             
             # Display the image
             plt.imshow(normalized_image, cmap='gray')

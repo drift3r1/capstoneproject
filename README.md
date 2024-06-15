@@ -135,10 +135,10 @@ Below are visual comparisons of the original, CPU-denoised, and GPU-denoised ima
 ![Original Image](data/wash-ir.png)
 
 #### CPU Denoised Image
-![CPU Denoised Image](data/preprocessed/denoised_wash-ir.png)
+![CPU Denoised Image](data/preprocessed/cpu/denoised_wash-ir.png)
 
 #### GPU Denoised Image
-![GPU Denoised Image](data/preprocessed/denoised_denoised_wash-ir.png)
+![GPU Denoised Image](data/preprocessed/gpu/denoised_wash-ir.png)
 
 ### Discussion
 

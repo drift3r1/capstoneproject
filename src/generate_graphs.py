@@ -8,7 +8,7 @@ cpu_psnr_values = []
 cpu_ssim_values = []
 cpu_times = []
 
-with open('cpu_denoise_output.txt', 'r') as f:
+with open('src/cpu_denoise_output.txt', 'r') as f:
     for line in f:
         match = re.search(r'Processed (.+?): PSNR = (.+?), SSIM = (.+?), CPU Time = (.+?) seconds', line)
         if match:
@@ -24,7 +24,7 @@ gpu_psnr_values = []
 gpu_ssim_values = []
 gpu_times = []
 
-with open('gpu_denoise_output.txt', 'r') as f:
+with open('src/gpu_denoise_output.txt', 'r') as f:
     for line in f:
         match = re.search(r'Processed (.+?): PSNR = (.+?), SSIM = (.+?), GPU Time = (.+?) seconds', line)
         if match:
