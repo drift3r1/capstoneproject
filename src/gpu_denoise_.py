@@ -22,7 +22,7 @@ def nlm_gpu(image, patch_size=3, h=10.0):
 
 # Directory containing the preprocessed images
 preprocessed_dir = 'data/preprocessed'
-denoised_dir = 'data/preprocessed/cpu'
+denoised_dir = 'data/preprocessed/gpu'
 
 # Ensure the denoised directory exists
 os.makedirs(denoised_dir, exist_ok=True)
