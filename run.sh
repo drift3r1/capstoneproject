@@ -20,7 +20,7 @@ if command -v nvcc &>/dev/null; then
 	./src/gpu_denoise
 else
 	echo "Running GPU implementation with Python..."
-	python3 src/gpu_denoise_.py >gpu_denoise_output.txt
+	python3 src/gpu_denoise_.py >src/gpu_denoise_output.txt
 fi
 
 # Step 4: Generate results
