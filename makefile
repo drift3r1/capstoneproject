@@ -36,8 +36,8 @@ clean:
 	rm -f src/gpu_denoise
 	rm -rf data/preprocessed
 	rm -rf $(VENV_DIR)
-	rm -rf cpu_denoise_output.txt
-	rm -rf gpu_denoise_output.txt
+	rm -rf src/cpu_denoise_output.txt
+	rm -rf src/gpu_denoise_output.txt
 	rm -rf CPU_graph.png
 	rm -rf GPU_graph.png
 	rm -rf timecomparison.png
