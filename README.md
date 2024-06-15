@@ -132,7 +132,7 @@ The following graph shows the time taken for denoising each image using both the
 Below are visual comparisons of the original, CPU-denoised, and GPU-denoised images:
 
 #### Original Image
-![Original Image](/data/wash-ir.tiff)
+![Original Image](/data/wash-ir.png)
 
 #### CPU Denoised Image
 ![CPU Denoised Image](capstoneproject/data/preprocessed/cpu/denoised_wash-ir.tiff)
