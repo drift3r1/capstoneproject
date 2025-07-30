@@ -152,7 +152,7 @@ By following this evaluation plan, we comprehensively assessed the effectiveness
 
 clone the repository using
 
-````gh repo clone shubham-attri/capstoneproject````
+````git clone https://github.com/drift3r1/capstoneproject.git````
 
 clean the existing output files using 
 
